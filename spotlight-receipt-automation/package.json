@@ -1,0 +1,14 @@
+{
+  "name": "spotlight-receipt-automation",
+  "version": "1.0.0",
+  "description": "spotlight receipt automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "rm lambda.zip; zip -x '.env' -x '.idea*' -x '.git*' -x '.DS_Store' -r lambda.zip .; aws --profile spotlight lambda update-function-code --function-name spotlight-receipt-automation --zip-file fileb://lambda.zip",
+    "local": "node -e \"console.log(require('./index').handler());\""
+  },
+  "author": "Spotlight",
+  "license": "ISC",
+  "dependencies": {}
+}
